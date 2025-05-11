@@ -18,8 +18,6 @@ Developed in collaboration with clinical requirements from HCA Houston Clear Lak
 
 ## Methodology
 
-The modeling pipeline follows industry best practices for structured medical data:
-
 ### Data Preprocessing
 - Filled missing values, removed rows with NaNs, and normalized features using `MinMaxScaler`.
 - One-hot encoded categorical variables such as gender, insurer, and procedure type.
@@ -87,18 +85,26 @@ MS Systems Engineering, University of Oklahoma
 Quantitative Model Risk Intern @ DTCC  
 Email: abdulmalik.ajisegiri@ou.edu
 
+---
 
 ## Model Performance Visuals
 
-### Model Evaluation and Performance Metrics
-![Model Evaluation](images/chart_slide_5_3.png)
+### Feature Correlation Heatmap
+This matrix highlights correlations between clinical variables and operative mortality. Highly correlated variables were evaluated for multicollinearity using VIF analysis.
+![Correlation Heatmap](images/chart_custom_4.png)
 
 ### Residual Distribution
-![Residuals](images/chart_slide_6_5.png)
+Visualizes the difference between predicted and actual values. A symmetric, centered distribution around 0 implies minimal prediction bias.
+![Residuals](images/chart_custom_1.png)
 
-### Feature Importance Ranking
-![Feature Importance](images/chart_slide_7_6.png)
+### Feature Importance for Stacked Model (RF + GB)
+Key drivers of operative mortality included prolonged ventilation, short stay, and renal failure.
+![Feature Importance](images/chart_custom_6.png)
 
-### Prediction Probability Output Interface
-![Prediction Workflow](images/chart_slide_9_8.png)
+### Age Distribution of Patients
+Model calibration leans toward older patients, reflecting real TAVR population data.
+![Age Histogram](images/chart_custom_7.png)
 
+### VIF Heatmap Before and After Feature Removal
+Helps assess multicollinearity. Removal of highly collinear variables (e.g., Morbidity & Mortality) improved model performance.
+![VIF Heatmap](images/chart_custom_5.png)
