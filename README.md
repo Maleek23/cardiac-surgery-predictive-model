@@ -104,9 +104,8 @@ Cardiac-Surgery-Predictive-Model/
 - Build front-end UI or API for clinicians to input data and receive predictions
 - Consider fairness and bias in model predictions, especially across age and ethnicity
 
-## Author
+## Authors
 
 Abdulmalik Ajisegiri  
 MS Systems Engineering, University of Oklahoma  
-Quantitative Model Risk Intern @ DTCC  
 Email: abdulmalik.ajisegiri@ou.edu
