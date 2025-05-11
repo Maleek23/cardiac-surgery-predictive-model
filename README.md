@@ -23,6 +23,11 @@ Developed in collaboration with clinical requirements from HCA Houston Clear Lak
 - One-hot encoded categorical variables such as gender, insurer, and procedure type.
 - Feature selection guided by correlation analysis and model-based importance.
 
+<figure>
+  <img src="images/chart_custom_4.png" alt="Feature Correlation Heatmap" width="600"/>
+  <figcaption align="center"><b>Figure 1:</b> Correlation heatmap showing relationships between predictors.</figcaption>
+</figure>
+
 ### Modeling Techniques
 - Gradient Boosting Regressor for non-linear relationship handling.
 - Stacking Ensemble with Random Forest and Gradient Boosting to boost robustness.
@@ -32,7 +37,11 @@ Developed in collaboration with clinical requirements from HCA Houston Clear Lak
 ### Evaluation Metrics
 - R² Score: 0.78 (main.py model), 0.81 (stacked TAVR model)
 - Mean Squared Error: 0.04 (main.py model), 0.12 (TAVR model)
-- Additional metrics: residual analysis, learning curve, and feature importance plots
+
+<figure>
+  <img src="images/chart_custom_1.png" alt="Residual Distribution" width="600"/>
+  <figcaption align="center"><b>Figure 2:</b> Residual distribution of model predictions shows low bias.</figcaption>
+</figure>
 
 ## Key Findings
 
@@ -40,11 +49,28 @@ Developed in collaboration with clinical requirements from HCA Houston Clear Lak
 - Feature correlation was assessed using VIF; removal of multicollinear features improved model performance.
 - Ensemble modeling significantly increased accuracy, indicating robustness against clinical variability.
 
+<figure>
+  <img src="images/chart_custom_6.png" alt="Feature Importance" width="600"/>
+  <figcaption align="center"><b>Figure 3:</b> Top features ranked by importance in predicting operative mortality.</figcaption>
+</figure>
+
+<figure>
+  <img src="images/chart_custom_5.png" alt="VIF Heatmap" width="600"/>
+  <figcaption align="center"><b>Figure 4:</b> VIF analysis before and after feature pruning to reduce multicollinearity.</figcaption>
+</figure>
+
 ## Clinical Impact
 
 - Aligns with STS-defined outcomes (mortality, stroke, AKI, etc.).
 - Proven capability to estimate a 3-star program rating based on expected/observed outcome ratios.
 - Can be integrated into weekly surgical review workflows to assist clinicians in prioritizing care.
+
+## Data Distribution Insight
+
+<figure>
+  <img src="images/chart_custom_7.png" alt="Age Distribution" width="500"/>
+  <figcaption align="center"><b>Figure 5:</b> Age distribution of patient data used for model training and testing.</figcaption>
+</figure>
 
 ## File Structure
 
@@ -84,49 +110,3 @@ Abdulmalik Ajisegiri
 MS Systems Engineering, University of Oklahoma  
 Quantitative Model Risk Intern @ DTCC  
 Email: abdulmalik.ajisegiri@ou.edu
-
----
-
-## Model Performance Visuals
-
-To evaluate the effectiveness and interpretability of our clinical model, we used multiple visualization techniques. These provide clarity into how features impact predictions and how well the model performs on unseen data.
-
----
-
-### 1. Feature Correlation Heatmap
-
-This matrix shows how strongly clinical variables are related to operative mortality and each other. Identifying and mitigating high correlation is crucial for reliable predictions.
-
-![Correlation Heatmap](images/chart_custom_4.png)
-
----
-
-### 2. Residual Distribution
-
-A well-centered, symmetrical residual plot confirms minimal prediction bias. The residuals (difference between predicted and actual values) follow a reasonably normal distribution.
-
-![Residuals](images/chart_custom_1.png)
-
----
-
-### 3. Feature Importance – Stacked Model (RF + GB)
-
-The top predictors for operative mortality include **Prolonged Ventilation**, **Short Hospital Stay**, and **Renal Failure**. These features were consistently highlighted across ensemble models.
-
-![Feature Importance](images/chart_custom_6.png)
-
----
-
-### 4. Age Distribution of Patients
-
-The dataset's age distribution skews toward older patients, typical of TAVR procedures. This explains the model's increased confidence in predictions for patients in the 70–85 range.
-
-![Age Histogram](images/chart_custom_7.png)
-
----
-
-### 5. Variance Inflation Factor (VIF) Analysis
-
-This pair of heatmaps demonstrates how multicollinearity was reduced by removing overlapping features. Post-removal, the VIF scores dropped significantly, improving model stability.
-
-![VIF Heatmap](images/chart_custom_5.png)
