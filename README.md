@@ -84,4 +84,21 @@ Cardiac-Surgery-Predictive-Model/
 
 Abdulmalik Ajisegiri  
 MS Systems Engineering, University of Oklahoma  
+Quantitative Model Risk Intern @ DTCC  
 Email: abdulmalik.ajisegiri@ou.edu
+
+
+## Model Performance Visuals
+
+### Model Evaluation and Performance Metrics
+![Model Evaluation](images/chart_slide_5_3.png)
+
+### Residual Distribution
+![Residuals](images/chart_slide_6_5.png)
+
+### Feature Importance Ranking
+![Feature Importance](images/chart_slide_7_6.png)
+
+### Prediction Probability Output Interface
+![Prediction Workflow](images/chart_slide_9_8.png)
+
