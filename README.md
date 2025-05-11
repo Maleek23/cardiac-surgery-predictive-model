@@ -89,22 +89,44 @@ Email: abdulmalik.ajisegiri@ou.edu
 
 ## Model Performance Visuals
 
-### Feature Correlation Heatmap
-This matrix highlights correlations between clinical variables and operative mortality. Highly correlated variables were evaluated for multicollinearity using VIF analysis.
+To evaluate the effectiveness and interpretability of our clinical model, we used multiple visualization techniques. These provide clarity into how features impact predictions and how well the model performs on unseen data.
+
+---
+
+### 1. Feature Correlation Heatmap
+
+This matrix shows how strongly clinical variables are related to operative mortality and each other. Identifying and mitigating high correlation is crucial for reliable predictions.
+
 ![Correlation Heatmap](images/chart_custom_4.png)
 
-### Residual Distribution
-Visualizes the difference between predicted and actual values. A symmetric, centered distribution around 0 implies minimal prediction bias.
+---
+
+### 2. Residual Distribution
+
+A well-centered, symmetrical residual plot confirms minimal prediction bias. The residuals (difference between predicted and actual values) follow a reasonably normal distribution.
+
 ![Residuals](images/chart_custom_1.png)
 
-### Feature Importance for Stacked Model (RF + GB)
-Key drivers of operative mortality included prolonged ventilation, short stay, and renal failure.
+---
+
+### 3. Feature Importance – Stacked Model (RF + GB)
+
+The top predictors for operative mortality include **Prolonged Ventilation**, **Short Hospital Stay**, and **Renal Failure**. These features were consistently highlighted across ensemble models.
+
 ![Feature Importance](images/chart_custom_6.png)
 
-### Age Distribution of Patients
-Model calibration leans toward older patients, reflecting real TAVR population data.
+---
+
+### 4. Age Distribution of Patients
+
+The dataset's age distribution skews toward older patients, typical of TAVR procedures. This explains the model's increased confidence in predictions for patients in the 70–85 range.
+
 ![Age Histogram](images/chart_custom_7.png)
 
-### VIF Heatmap Before and After Feature Removal
-Helps assess multicollinearity. Removal of highly collinear variables (e.g., Morbidity & Mortality) improved model performance.
+---
+
+### 5. Variance Inflation Factor (VIF) Analysis
+
+This pair of heatmaps demonstrates how multicollinearity was reduced by removing overlapping features. Post-removal, the VIF scores dropped significantly, improving model stability.
+
 ![VIF Heatmap](images/chart_custom_5.png)
