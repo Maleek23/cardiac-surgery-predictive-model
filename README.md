@@ -84,5 +84,4 @@ Cardiac-Surgery-Predictive-Model/
 
 Abdulmalik Ajisegiri  
 MS Systems Engineering, University of Oklahoma  
-Quantitative Model Risk Intern @ DTCC  
 Email: abdulmalik.ajisegiri@ou.edu
